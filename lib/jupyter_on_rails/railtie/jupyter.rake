@@ -43,7 +43,7 @@ namespace :jupyter do
         Rails.application.class.parent
       end
 
-    sh "JUPYTER_DATA_DIR=#{Shellwords.shellescape(ipython_dir.to_s)} bundle exec iruby register --force"
+    sh "JUPYTER_DATA_DIR=#{Shellwords.shellescape(ipython_dir.to_s)} bundle exec iruby register --force --name ruby"
 
     [
       OpenStruct.new(kernel_name: 'rails',         boot_file: '../boot.rb',         name_ext: ''),
